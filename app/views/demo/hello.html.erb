@@ -1,3 +1,38 @@
 <h1>Demo#hello</h1>
 
 <p>Hello from the Hello Page!</p>
+
+<%= 1 + 1 %>
+
+<br>
+<br>
+
+<% target = "world"%>
+<%= "Hello #{target}"%>
+
+<!-- wrong way to do puts: <%3.times do
+	puts "xxx"
+	end
+	%> -->
+
+<br>
+<br>
+
+ <!-- example of using an instance variable the controller has set up and proper put format-->	
+
+<% @array.each do |n| %>
+ <%= n %><br>
+<% end %>
+
+<%= link_to("My first link",{:action => 'index'})%>
+
+<br>
+<br>
+
+ID: <%= params[:id] %><br>
+Next page: <%= @page + 1 %>
+
+<hr />
+
+<%= @array.inspect %>
+<%= params.inspect %>
