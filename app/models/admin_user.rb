@@ -5,9 +5,12 @@ class AdminUser < ActiveRecord::Base
   
   scope :andrew, where(:first_name => "Andrew")
   
-  #example of a search query using escaped syntax for security
+  # example of a search query using escaped syntax for security
   scope :search, lambda {|query| where(["first_name LIKE ?", "%#{query}%"])}
+  
+  # example of name scope with two inputs
   scope :named, lambda {|first,last| where(:first_name => first, :last_name => last)}
+  
   # To configure a different table name with a legacy DB
   # set_table_name("admin_users")
   

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120626045554) do
+ActiveRecord::Schema.define(:version => 20120626225932) do
 
   create_table "admin_users", :force => true do |t|
     t.string   "first_name",      :limit => 25
@@ -57,9 +57,16 @@ ActiveRecord::Schema.define(:version => 20120626045554) do
     t.datetime "updated_at",                  :null => false
     t.integer  "style_id"
     t.integer  "commission_id"
+    t.integer  "location_id"
+    t.string   "project_type"
+    t.integer  "price_id"
+    t.integer  "rating_id"
   end
 
   add_index "photographers", ["commission_id"], :name => "index_photographers_on_commission_id"
+  add_index "photographers", ["location_id"], :name => "index_photographers_on_location_id"
+  add_index "photographers", ["price_id"], :name => "index_photographers_on_price_id"
+  add_index "photographers", ["rating_id"], :name => "index_photographers_on_rating_id"
   add_index "photographers", ["style_id"], :name => "index_photographers_on_style_id"
 
   create_table "photos", :force => true do |t|
